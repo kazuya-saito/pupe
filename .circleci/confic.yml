@@ -23,7 +23,7 @@ jobs:
 
       - run: chmod +x ./setup_libxcb.sh
       - run: sh ./setup_libxcb.sh
-      - run: yarn install
+      - run: npm install
 
       - save_cache:
           paths:
@@ -31,4 +31,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run: node script.js
